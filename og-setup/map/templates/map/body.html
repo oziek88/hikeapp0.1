@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load leaflet_tags %}
+
+<head>
+	<title>fGoogle</title>
+	<meta charset="utf-8" />
+
+	{% load staticfiles %}
+
+	{% leaflet_js %}
+  {% leaflet_css %}
+
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" type = "text/css"/> 
+  <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-toggle/css/bootstrap-toggle.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/body.css' %}"/>
+  <link rel="stylesheet" href="{% static 'jQuery/custom-scroll/jquery.mCustomScrollbar.css' %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+   
+<style type="text/css">
+
+html, body, .leaflet-container { 
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+</style>
+</head>
+
+<body>
+	<script src="{% static "jQuery/jquery-3.0.0.min.js" %}"></script>
+  <script src="{% static "jQuery/jquery-ui-1.11.4.custom/jquery-ui.min.js" %}"></script>
+  <script src="{% static "js/body.js" %}"></script>
+  <script src="{% static "bootstrap/bootstrap-toggle/js/bootstrap-toggle.min.js" %}"></script>
+  <script src="{% static "jQuery/custom-scroll/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+  <script src="{% static "Leaflet.markercluster/dist/leaflet.markercluster-src.js" %}"></script>
+
+
+{% leaflet_map "yourmap" callback="window.map_init_basic" %}
+
+
+{% block content %}
+{% endblock %}		
+	
+</body>
+</html>
