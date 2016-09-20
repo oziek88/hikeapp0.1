@@ -1,1 +1,1 @@
-# mappie
+# hikeapp 0.1
